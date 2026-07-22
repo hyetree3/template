@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>    
+    h1:hover  { color: red; }   /* 마우스 올렸을 때 */
+    h1:active { color: blue; }  /* 클릭 중일 때 */
+
+    input:focus     { border: 2px solid orange; }
+    input:disabled  { background: #eee; }
+    input:checked + label { font-weight: bold;
+    color: green;
+    accent-color: hotpink;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1> hello,world</h1>
+    <input type="text" name="텍스트" id="input">
+    <label for="input"> text </label> <p>
+    <input type="checkbox" name="선택" id="choice">
+    <label for="choice"> choice </label>
+    </p>
+</body>
+</html>

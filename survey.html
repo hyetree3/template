@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      textarea  { background: rgb(255, 255, 0, 0.09); }
+      option { background: lightpink; }
+   </style>
+    <title>선택 그룹 태그 </title>
+</head>
+<body>
+    <h2>수강 신청 설문</h2>
+    <form action="" method="post"></form>
+
+    <fieldset>
+        <legend> 기본 정보 </legend>
+        <label for="name"> 이름:</label>
+        <input type="text" id="name" name="name">
+    </fieldset>
+
+    <fieldset>
+        <legend> 수강 희망 과목 </legend>
+        <select name="course" >
+            <optgroup label="프론트엔드">
+                <option value="html"> HTML/CSS </option>
+                <option value="JS"> 자바스크립트 </option>
+                <option value="react"> 리액트 </option>
+            </optgroup>
+            </select>
+            <select name="course" >
+            <optgroup label="백엔드">
+                <option value="node"> Node.js</option>
+                <option value="spring"> 스프링 </option>
+            </optgroup>
+            
+        </select>
+    </fieldset>
+
+    <filedset>
+        <legend> 건의 사항 </legend>
+               
+       <textarea name="memo" rows="5" cols="55">여기에 입력하세요</textarea> 
+    </filedset>
+
+    <input type="submit" value="제출">
+</body>
+</html>

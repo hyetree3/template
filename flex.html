@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        .container {
+            width: 700px;
+            height: 700px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .one {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .two {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .three {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+        .container >div >div{
+            color: white;
+            line-height: 100px;
+            text-align: center;    
+            font-size: 40px;
+            height: 100px;
+            width: 100px;
+        }     
+        .blue {
+            background-color: #4967d8;
+        }    
+        .pink {
+            background-color: #ea8676;
+            
+        }
+        .yellow {
+            background-color: #fad84a;
+        }   
+      
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="one"> 
+            <div class="blue" >A</div>
+            <div class="pink" >B</div>
+            <div class="yellow" >C</div>
+        </div>
+        <div class="two">
+            <div class="blue" >D</div>
+            <div class="yellow" >E</div>
+        </div>
+        <div class="three">
+            <div class="blue" >F</div>
+            <div class="pink" >G</div>
+            <div class="yellow" >H</div>
+        </div>
+    </div>
+</body>
+</html>
