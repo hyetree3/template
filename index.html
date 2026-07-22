@@ -16,6 +16,9 @@
             align-items: center;
             color: #6d6b6bfa;
         }
+        .nav a:hover {
+            font-weight: bold;
+        }
         /*상단의 동그란 레옹*/
         .cat{
             width: 55px;
@@ -34,9 +37,7 @@
             transition: transform 1ms ;
             border: 2px solid rgba(235, 187, 236, 0.171); 
         }
-        .cat:active{
-            border: 5px solid rgb(240, 152, 241); 
-        }
+        
         /*본문*/
         body {
             background-color: rgba(235, 187, 236, 0.171)
@@ -50,12 +51,22 @@
             align-items: center;
             gap: 20px;
             background-color: #fff9e6;
-            font-size: 13px;
+            font-size: 20px;
             margin: 200px auto;
             padding: 20px;
             border: 5px solid #ffff;
             border-radius: 5%;
             line-height: 1.7;
+        }
+        footer {
+            background-color: rgb(165, 164, 164);
+        }
+        /*연락처*/
+        .section-card2{
+            margin: 20px;
+        }
+        .section-card2:hover, .section-card2:active{
+            font-weight: bold;
         }
         /*font 설정 */
         body a {
@@ -76,12 +87,10 @@
         }
         pre {
             font-family: sans-serif;
-            font-size: 100%
+            white-space: pre-wrap;
         }
-        footer {
-            background-color: rgb(165, 164, 164);
-            font-variant-emoji: text;
-        }
+        
+
         /*고양이사진*/
         .gallery { 
             display: grid;
@@ -126,9 +135,11 @@
         <pre>
             안녕하세요, 송혜림입니다!
             별명은 염소 🐐
-            IT 인프라 엔지니어 출신으로, 지금은 AI / AX 엔지니어로 커리어를 전환 중입니다.
-            Unix/Linux 서버 운영, 서버 보안, 대규모 모니터링, PostgreSQL, HA 클러스터링 등
-            인프라 현장에서 쌓은 경험을 바탕으로, AI를 활용한 운영 자동화와 장애 대응 시스템을 만들고 있습니다.</pre>
+            IT 인프라 엔지니어 출신으로
+            Unix/Linux 서버 구축, 서버 보안, 서버 모니터링
+            PostgreSQL, HA 클러스터링 등
+            인프라 현장에서 쌓은 경험을 바탕으로
+            AI를 활용한 운영 자동화와 장애 대응 시스템을 만들고 있습니다.</pre>
     </section>
     <section class="section-card" id="hobby">
         <h2> 취미 🎲 </h2>
@@ -159,14 +170,22 @@
             <img src="./img/cat.jpg" alt="엎드려 있는 고양이 사진" title="엎드려 있는 레옹" loading="lazy">
         </div>
     </section>
+    <section class="section-card2" id="emailto">
+        <div align="center">
+            <a href="mailto:hyetree3@gmail.com"> 문의사항은 언제든 연락주세요. </a>
+        </div>
+    </section>
+       
     <a href="#nav">
     <footer>
         <div align="center">
              ▲ 
         <br>
-        <br>
+        <br> 
+        
         </div>
     </footer>
     </a>
+
 </body>
 </html>
