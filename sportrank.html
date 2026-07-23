@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <style>
         body {
-            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+            font-family:  sans-serif;
             background: #f4f6f8;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 40px 20px;
+            color:#838282;
+            font-size: 10px;
         }
 
         #year {
@@ -23,7 +25,7 @@
             list-style: none;
             padding: 0;
             width: 100%;
-            max-width: 480px;
+            max-width: 800px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -33,26 +35,51 @@
         li {
             display: flex;
             align-items: center;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border-bottom: 1px solid #eee;
             font-size: 1rem;
         }
-
-        li:last-child {
-            border-bottom: none;
+        
+        li { 
+            display: flex;
+            justify-content: space-evenly;
         }
-
-        li:nth-child(even) {
-            background: #fafafa;
+        img {
+            width: 40px;
+            height: 40px;
         }
-
-        #rank0 { background: #da0b0b; font-weight: bold; color: #0e0202; }
+        .col-rank {
+            width: 50px ;
+            text-align: center;
+        }
+        .col-name {
+            width: 200px ;
+        }
+        .col-num {
+            width: 75px ;
+            text-align: center;
+        }
+        #team_head {
+            text-align: center;
+            background-color: #eee;
+        }
     </style>
     <title>KBO리그 순위</title>
 </head>
 <body>
     <div id="year"></div>
     <ul>
+        <li id="team_head">
+        <span class="col-rank">순위</span>
+        <span class="col-name">팀</span>
+        <span class="col-num">경기</span>
+        <span class="col-num">승</span>
+        <span class="col-num">무</span>
+        <span class="col-num">패</span>
+        <span class="col-num">승률</span>
+        <span class="col-num">게임차</span>
+        <span class="col-num">연속</span>
+        </li>
         <li id="rank0"></li>
         <li id="rank1"></li>
         <li id="rank2"></li>
@@ -79,8 +106,19 @@
                 data.list.sort((a, b) => a.rank.rank - b.rank.rank);
                 data.list.forEach((team, index) => {
                    /* console.log(data.name);*/
+                   /*순위 팀 경기 승 무 패 승률 게임차 연속 */
                     const baseballteam = document.getElementById(`rank${index}`); 
-                    baseballteam.innerHTML = `${team.rank.rank}위: ${team.name}  ${team.rank.win}승 `;
+                    baseballteam.innerHTML =`
+                    <span class="col-rank"><strong>${team.rank.rank}</strong></span>
+                    <span class="col-name"><img src="${team.imageUrl}">${team.name}</span>
+                    <span class="col-num">${team.rank.game}</span>
+                    <span class="col-num">${team.rank.win}</span>
+                    <span class="col-num">${team.rank.draw}</span>
+                    <span class="col-num">${team.rank.loss}</span>
+                    <span class="col-num">${team.rank.wpct}</span>
+                    <span class="col-num">${team.rank.gb}</span>
+                    <span class="col-num">${team.rank.streak}</span>
+                `;
 
                 });
             })
