@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토요일 일정</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:15px;
+    background:#f3f4f6;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#222;
+}
+
+h1{
+    text-align:center;
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#fff;
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.time{
+    font-size:20px;
+    font-weight:bold;
+    color:#1565c0;
+    margin-bottom:10px;
+}
+
+label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:10px 0;
+    font-size:17px;
+    line-height:1.4;
+    border-bottom:1px solid #eee;
+}
+
+label:last-child{
+    border:none;
+}
+
+input[type="checkbox"]{
+    width:24px;
+    height:24px;
+    margin-top:2px;
+    flex-shrink:0;
+}
+
+.section-title{
+    margin-top:15px;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#d32f2f;
+}
+
+.note{
+    background:#fff8dc;
+    border-radius:10px;
+    padding:12px;
+    margin-top:12px;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🩺 엄마 병원 일정</h1>
+
+<div class="card">
+
+<div class="time">06:40 기상</div>
+
+<label><input type="checkbox">기상</label>
+<label><input type="checkbox">세수 및 준비</label>
+<label><input type="checkbox">짐 확인</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">07:10</div>
+
+<label><input type="checkbox">게스트하우스 체크아웃</label>
+
+<div class="time">07:20</div>
+
+<label><input type="checkbox">게스트하우스 출발</label>
+
+<div class="time">07:40 부모님 집</div>
+
+<label><input type="checkbox">세면대 오물용해제 붓기</label>
+<label><input type="checkbox">엄마 준비</label>
+<label><input type="checkbox">대학병원 서류 챙기기</label>
+<label><input type="checkbox">신분증 확인</label>
+
+<div class="time">08:15</div>
+
+<label><input type="checkbox">집 출발</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">08:30 병원 도착</div>
+
+<label><input type="checkbox">신경과 접수 대기</label>
+
+<div class="time">08:40 접수</div>
+
+<label><input type="checkbox">신경과 진료</label>
+
+<div class="section-title">
+📄 보험 서류 요청
+</div>
+
+<label><input type="checkbox">치매 진단서</label>
+
+<label><input type="checkbox">'최초 진단 이후 현재까지 치매 상태가 90일 이상 지속되고 있음'이 기재된 소견서</label>
+
+<label><input type="checkbox">CDR 검사 결과지</label>
+
+<label><input type="checkbox">CT 또는 MRI 판독 결과지</label>
+
+<label><input type="checkbox">진료기록 사본</label>
+
+<label><input type="checkbox">다음 진료 예약</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">10:00~12:00 내과</div>
+
+<label><input type="checkbox">대학병원 서류 제출</label>
+
+<label><input type="checkbox">골다공증 주사</label>
+
+<label><input type="checkbox">처방전 발급</label>
+
+<label><input type="checkbox">약 수령</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">12:00 점심</div>
+
+<label><input type="checkbox">점심 식사</label>
+
+<div class="time">12:30~13:30</div>
+
+<label><input type="checkbox">기존 약 정리</label>
+
+<label><input type="checkbox">새 약 확인</label>
+
+<label><input type="checkbox">약달력 채우기</label>
+
+<label><input type="checkbox">복용법 확인</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">13:30~14:20</div>
+
+<label><input type="checkbox">엄마 명의 알뜰폰 개통</label>
+
+<label><input type="checkbox">유심 장착</label>
+
+<label><input type="checkbox">통화 테스트</label>
+
+<label><input type="checkbox">문자 테스트</label>
+
+<label><input type="checkbox">데이터 테스트</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">14:20~15:30</div>
+
+<label><input type="checkbox">암보험 해지</label>
+
+<label><input type="checkbox">치매보험 진단금 청구 준비</label>
+
+<label><input type="checkbox">병원 서류 정리</label>
+
+<label><input type="checkbox">세면대 확인</label>
+
+<label><input type="checkbox">짐 정리</label>
+
+</div>
+
+<div class="card">
+
+<div class="time">16:00</div>
+
+<label><input type="checkbox">집 출발</label>
+
+<div class="time">16:30</div>
+
+<label><input type="checkbox">🚌 버스 탑승</label>
+
+</div>
+
+<div class="footer">
+토요일 미션 완료! ✅
+</div>
+
+</body>
+</html>

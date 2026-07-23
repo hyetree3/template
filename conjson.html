@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="heros">
+        <li id="hero1"></li>
+        <li id="hero2"></li>
+        <li id="hero3"></li>
+    </div>
+
+    <script>
+    const jsonUrl = "https://jwonchi.github.io/kopoclass/JSON/supJson.json";
+
+    fetch(jsonUrl)
+        .then((herogroup) => {
+            return herogroup.json();
+        })
+
+        .then((data) => {
+            const hero1=document.getElementById("hero1");
+            const hero2=document.getElementById("hero2");
+            const hero3=document.getElementById("hero3");
+            hero1.innerHTML=`<div style="color:red"> ${data.members[0].name}</div>`;
+            hero2.innerHTML=`<div style="color:red"> ${data.members[1].name}</div>`;
+            hero3.innerHTML=`<div style="color:red"> ${data.members[2].name}</div>`;
+        });
+    .catch((error) => {
+        console.error("실패",error)
+    });
+    
+
+    </script>
+</body>
+</html>

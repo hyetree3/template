@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        body {
+            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        #year {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            font-size: 1rem;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li:nth-child(even) {
+            background: #fafafa;
+        }
+
+        #rank0 { background: #da0b0b; font-weight: bold; color: #0e0202; }
+    </style>
+    <title>KBO리그 순위</title>
+</head>
+<body>
+    <div id="year"></div>
+    <ul>
+        <li id="rank0"></li>
+        <li id="rank1"></li>
+        <li id="rank2"></li>
+        <li id="rank3"></li>
+        <li id="rank4"></li>
+        <li id="rank5"></li>
+        <li id="rank6"></li>
+        <li id="rank7"></li>
+        <li id="rank8"></li>
+        <li id="rank9"></li>
+    </ul>
+
+    <script>
+        const sportinfo="https://prof-jwchi.github.io/kopo-front2026/Json/baseball.json";
+        
+
+        fetch(sportinfo) 
+            .then((sportinfo_baseball) => {
+                return sportinfo_baseball.json();
+            })
+            .then((data) => {
+                const whatyear=document.getElementById("year");
+                whatyear.innerHTML = `<strong>${data.season.nameMain}</strong>`;            
+                data.list.sort((a, b) => a.rank.rank - b.rank.rank);
+                data.list.forEach((team, index) => {
+                   /* console.log(data.name);*/
+                    const baseballteam = document.getElementById(`rank${index}`); 
+                    baseballteam.innerHTML = `${team.rank.rank}위: ${team.name}  ${team.rank.win}승 `;
+
+                });
+            })
+        .catch((error) => {
+            console.error("json 에러!",error);
+        });
+            </script>
+</body>
+</html>
