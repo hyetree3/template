@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .lotto{
+            font-size:30px;
+            color: rgba(7, 7, 7, 0.74);
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 20px;
+            border-radius: 50%;
+            text-align: center;            
+        }
+        /*#result, #resultbonus{            
+            display: flex;
+            justify-content: center;
+        }*/
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lotto_yellow {
+            background-color: rgba(255, 255, 0, 0.555);     
+        }
+        .lotto_blue {
+            background-color: rgba(0, 0, 255, 0.555);
+        }
+        .lotto_red {
+            background-color: rgba(255, 0, 0, 0.603);
+        }
+        .lotto_gray {
+            background-color: rgba(128, 128, 128, 0.644);
+        }
+        .lotto_green {
+            background-color: rgba(0, 128, 0, 0.548);
+        }
+        #btn {
+            width: 50%;
+            font-size: 18px;
+            color: #000000;
+            padding: 12px 0;
+            border:1px #ffffff5d;
+            background: #d62020;
+        }
+
+        #btn:active {
+            background: #d76efd54;
+        }
+        
+    </style>
+    <title>로또 생성기</title>
+</head>
+<body>
+    <header>
+    </header>
+        <button id="btn">로또</button>
+        <div id="result"></div>
+        <div id="bonustext" style="display:none;"> 보너스 </div>
+        <div id="resultbonus"></div>
+        
+    <script>
+        function getColor(n) {
+            if (n <= 10) return 'yellow';
+            if (n <= 20) return 'blue';
+            if (n <= 30) return 'red';
+            if (n <= 40) return 'gray';
+            return 'green';
+        }
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            const numbers = [];            
+                for (let i=0; i <6;i++) {
+                    let num = Math.floor(Math.random() * 45) + 1;
+                    /*console.log(numbers.includes(num))*/
+                    while (numbers.includes(num)){
+                        num = Math.floor(Math.random() * 45) + 1;
+                    }
+                    numbers.push(num);                        
+                }
+            numbers.sort((a, b) => a - b);
+            /*console.log(numbers);  */
+            const result = document.getElementById('result');
+            result.innerHTML = numbers.map(n => {
+                return `<span class="lotto lotto_${getColor(n)}">${n}</span>`;
+            }).join('    ');
+
+            /*보너스번호*/
+            let bonus= Math.floor(Math.random() * 45) + 1;
+            /*console.log(bonus);*/
+            while (numbers.includes(bonus)){
+                bonus = Math.floor(Math.random() * 45) + 1;
+            }
+            document.getElementById('bonustext').style.display = 'block';
+            const resultbonus = document.getElementById('resultbonus');
+            resultbonus.innerHTML = `<span class="lotto lotto_${getColor(bonus)}"> ${bonus}</span>`;
+        });
+
+    </script>
+</body>
